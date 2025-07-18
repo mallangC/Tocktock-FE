@@ -16,7 +16,6 @@ const Complete = () => {
     const fetchTodos = async () => {
       const response = await apiService.getCompletedTodos();
       setTodos(response.todoList);
-      console.log(todos)
     };
     fetchTodos();
   }, []);

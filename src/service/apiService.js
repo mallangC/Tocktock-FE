@@ -13,7 +13,7 @@ api.interceptors.response.use(
     error => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
             console.error('인증되지 않은 요청입니다. 로그인 상태를 확인하세요.');
-            window.location.href = '/login'; // 페이지 새로고침과 함께 로그인 페이지로 이동
+            window.location.href = '/login';
         } else {
             console.error('API 요청 중 오류 발생:', error);
         }

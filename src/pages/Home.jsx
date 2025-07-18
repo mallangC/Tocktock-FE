@@ -49,7 +49,6 @@ const Home = () => {
   const onUpdateCheckbox = async (targetId, isDone) => {
     const response = await apiService.updateTodoCheckbox(targetId, !isDone)
     setTodos(response);
-    console.log(response);
   }
 
 
@@ -61,7 +60,6 @@ const Home = () => {
   const onDelete = async (targetId) => {
     const response = await apiService.deleteTodo(targetId);
     setTodos(prevTodos => prevTodos.filter(todo => todo.id !== targetId));
-    console.log(response);
   }
 
 //--------------------------------------------------------------------------------
@@ -69,7 +67,6 @@ const Home = () => {
 
   const handleDragStart = (e, todo) => {
     setDraggedItem(todo);
-    console.log(todo.id);
     if (!todo) {
       console.log("Error: 'todo' is undefined in handleDragStart.");
       return;
