@@ -1,0 +1,29 @@
+.EditorAll {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bebebe;
+}
+
+.Editor {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Editor input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #bebebe;
+}
+
+.Editor button {
+    cursor: pointer;
+    width: 80px;
+    border: none;
+
+}

@@ -1,0 +1,44 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.TodoItem input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.TodoItem .content {
+    flex: 1;
+}
+
+.TodoItem .date {
+    font-size: 14px;
+    color: gray;
+}
+
+.TodoItem button {
+    cursor: pointer;
+    color: gray;
+    font-size: 12px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.content_true {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.content_input {
+    flex: 1;
+    padding: 2px;
+    font-size: 15px; /* 기본 텍스트와 동일하게 */
+    box-sizing: border-box;
+}
