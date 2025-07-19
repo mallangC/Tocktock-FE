@@ -3,8 +3,7 @@ import './LoginPage.css';
 
 function LoginPage() {
     const handleGoogleLogin = () => {
-        // window.location.href = 'http://localhost:8080/oauth2/authorization/google';
-        window.location.href = 'https://api.tock-tock.com/oauth2/authorization/google';
+        window.location.href = `${import.meta.env.VITE_BASE_URL}/oauth2/authorization/google`;
     };
 
     return (

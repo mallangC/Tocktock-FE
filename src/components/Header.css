@@ -1,7 +1,7 @@
 .Header {
     position: sticky;
     top: 0;
-    width: 500px;
+    width: 100%;
     font-weight: bold;
     display: flex;
     justify-content: space-around; /* 또는 gap: 20px; 등 원하는 간격으로 설정 */
@@ -11,6 +11,16 @@
     border-bottom: 1px solid #ccc; /* 1px 두께의 회색 실선 */
     padding-bottom: 15px; /* 줄과 링크 사이의 간격 */
     background-color: white;
+}
+
+@media (min-width: 768px) {
+    .Header {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-around;
+    }
 }
 
 .Header a {
