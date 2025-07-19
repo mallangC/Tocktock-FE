@@ -1,8 +1,7 @@
 import './Complete.css'
 import Header from "../components/Header.jsx";
 import CompleteList from "../components/CompleteList.jsx";
-import {useEffect, useState} from "react";
-import apiService from "../service/apiService.js";
+import useCompletedTodos from "../hooks/useCompletedTodos.js";
 
 const getDateKey = (timestamp) => {
   if (!timestamp) return null;
@@ -11,14 +10,18 @@ const getDateKey = (timestamp) => {
 };
 
 const Complete = () => {
-  const [todos, setTodos] = useState([]);
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const response = await apiService.getCompletedTodos();
-      setTodos(response.todoList);
-    };
-    fetchTodos();
-  }, []);
+  const {todos, error} = useCompletedTodos();
+
+  if (error) {
+    return (
+        <div className={"Complete"}>
+          <Header />
+          <div className={"CompleteWrapper"}>
+            <p className="error-message">데이터를 불러오는 데 실패했습니다: {error.message}</p>
+          </div>
+        </div>
+    );
+  }
 
   const sortedCompletedTodos = [...todos].sort((a, b) => {
     if (!a.completedAt || !b.completedAt) {

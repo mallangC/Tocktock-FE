@@ -42,17 +42,17 @@ const apiService = {
         return response.data;
     },
 
-    updateTodoCheckbox: async (id, isDone) => {
+    updateTodoCheckbox: async ({id, isDone}) => {
         const response = await api.patch('/todolist/checkbox', {id, isDone});
         return response.data;
     },
 
-    updateTodoContent: async (id, content) => {
+    updateTodoContent: async ({id, content}) => {
         const response = await api.patch('/todolist/content', {id, content});
         return response.data;
     },
 
-    updateTodoOrder: async (draggedId, targetId) => {
+    updateTodoOrder: async ({draggedId, targetId}) => {
         const response = await api.patch('/todolist/order', {draggedId, targetId});
         return response.data;
     },

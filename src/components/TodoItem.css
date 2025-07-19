@@ -3,6 +3,7 @@
     align-items: center;
     gap: 20px;
     padding-bottom: 20px;
+    padding-top: 20px;
     border-bottom: 1px solid #d5d5d5;
 }
 
@@ -39,6 +40,6 @@
 .content_input {
     flex: 1;
     padding: 2px;
-    font-size: 15px; /* 기본 텍스트와 동일하게 */
+    font-size: 15px;
     box-sizing: border-box;
 }

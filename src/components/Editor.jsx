@@ -1,7 +1,6 @@
 import './Editor.css'
 import getCustomDateString from "../util/getCustomDateString.js";
 import {useRef, useState} from "react";
-import apiService from "../service/apiService.js";
 
 const Editor = ({onCreate}) => {
 
@@ -24,8 +23,7 @@ const Editor = ({onCreate}) => {
       contentRef.current.focus();
       return;
     }
-    const addedTodo = await apiService.addTodo(content.trim());
-    onCreate(addedTodo);
+    onCreate(content.trim());
     setContent("");
   }
 
