@@ -1,18 +1,21 @@
 .TodoItem {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid #d5d5d5;
+    gap: 10px;
+    padding: 15px 0;
+    /*border-bottom: 1px solid #d5d5d5;*/
     background-color: white;
 }
 
 .TodoItem input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
     flex-shrink: 0;
     margin-top: 2px;
+    color: gray;
+    accent-color: #367AFE;
 }
+
 
 .TodoItem .content {
     flex: 1;
@@ -20,20 +23,24 @@
 
 .TodoItem .date {
     font-size: 14px;
-    color: gray;
+    /*color: gray;*/
 }
 
 .TodoItem button {
+    margin: 0;
     cursor: pointer;
-    color: gray;
-    font-size: 12px;
+    color: #999999;
+    font-size: 15px;
     border: none;
-    padding: 5px;
-    border-radius: 5px;
+    width: 25px;   /* 버튼의 너비를 고정 */
+    height: 25px;  /* 버튼의 높이를 너비와 동일하게 고정 */
+    border-radius: 50%; /* <--- 이 속성이 버튼을 완벽한 원으로 만듭니다! */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    background-color: #F0F0F0;
 }
 
 .content_true {
-    text-decoration: line-through;
     color: gray;
 }
 

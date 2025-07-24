@@ -1,29 +1,41 @@
 .EditorAll {
     padding-bottom: 10px;
-    border-bottom: 1px solid #bebebe;
+    /*border-bottom: 1px solid #bebebe;*/
+    margin: 0 10px;
 }
 
 .Editor {
     display: flex;
     gap: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 h1 {
+    color: black;
+    font-size: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    padding-bottom: 5px;
 }
 
 .Editor input {
     flex: 1;
     padding: 15px;
-    border: 1px solid #bebebe;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
 }
 
 .Editor button {
+    background-color: #367AFE;
+    font-size: 16px;
     cursor: pointer;
     width: 80px;
     border: none;
-    color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+input::placeholder {
+    color: #AAAAAA;
 }

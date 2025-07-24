@@ -25,7 +25,6 @@ export const useTodoDragAndDrop = () => {
       return;
     }
 
-    // 같은 아이템 위에 드롭하는 경우 제외
     if (draggedItem.id === targetTodo.id) {
       setDraggedItem(null);
       return;

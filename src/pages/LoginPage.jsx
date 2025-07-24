@@ -4,19 +4,21 @@ import './LoginPage.css';
 function LoginPage() {
     const handleGoogleLogin = () => {
         window.location.href = `${import.meta.env.VITE_BASE_URL}/oauth2/authorization/google`;
+        // window.location.href = `${import.meta.env.VITE_BASE_URL}/auth/google`;
+
     };
 
     return (
         <div className="login-container">
-            <h2>투두 톡톡</h2>
+          <img className="logo" src="../../public/loginLogoAndText.png" alt="loginLogoAndText" sizes="50%"/>
+          <p className="content">간편한 할일 목록 작성이 <br/> 필요할 때 두잇 톡톡</p>
             <button className="google-login-button" onClick={handleGoogleLogin}>
-                Google 로그인
+              <img src="../../public/google_logo.png" alt="google-logo" className="button-icon"/>
+                <span className="button-text">Google로 계속하기</span>
             </button>
-            <p style={{marginTop: '20px', fontSize: '0.9em', color: '#555'}}>
-                Google 계정으로 로그인 시, 당사의 {' '}
-                <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>에 따라
-                귀하의 이메일 주소, 이름 등의 정보가 수집 및 이용됩니다.
-            </p>
+          <p className="end-text">로그인 오류 및 문의&nbsp;
+          <a href="mailto:info@yourcompany.com">ckj9001@gmail.com</a>
+          </p>
         </div>
     );
 }

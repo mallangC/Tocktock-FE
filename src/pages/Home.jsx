@@ -48,6 +48,7 @@ const Home = () => {
             handleDrop,
             handleDragEnd]}>
         <div className={"Home"}>
+          {/*<ButtonBasedModal/>*/}
           <Header/>
           <Editor onCreate={onCreate}/>
           <TodoList todos={todolist}/>

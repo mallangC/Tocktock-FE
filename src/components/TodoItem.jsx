@@ -1,6 +1,8 @@
 import './TodoItem.css'
 import {ListContext} from "../util/ListContext.jsx";
 import {useContext, useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = ({todo}) => {
   const [onUpdateCheckbox, onUpdateContent, onDelete, handleDragStart, handleDragOver, handleDrop, handleDragEnd] = useContext(ListContext);
@@ -36,6 +38,10 @@ const TodoItem = ({todo}) => {
     }
   }
 
+  const options = {
+    month: '2-digit',
+    day: '2-digit'
+  };
 
   return (
       <li className={"TodoItem"}
@@ -59,8 +65,8 @@ const TodoItem = ({todo}) => {
             (
                 <div className={`content content_${todo.isDone}`} onClick={toggleIsEditing}>{todo.content}</div>
             )}
-        <div className={"date"}>{new Date(todo.createdAt).toLocaleDateString()}</div>
-        <button onClick={onClickDeleteButton}>삭제</button>
+        <div className={"date"}>{new Date(todo.createdAt).toLocaleDateString('ko-KR',options).replace(/\.$/, '')}</div>
+        <button onClick={onClickDeleteButton}><FontAwesomeIcon icon={faTimes}/></button>
       </li>
   )
 }

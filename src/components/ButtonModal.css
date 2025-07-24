@@ -1,0 +1,69 @@
+/* 페이지 전체 컨테이너 (필요에 따라) */
+.page-wrapper {
+    min-height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 버튼이 왼쪽에 오도록 */
+}
+
+/* --- 버튼과 모달을 감싸는 컨테이너 (기준점) --- */
+.modal-trigger-container {
+    position: relative; /* 자식 absolute 요소의 위치 기준점 */
+    display: inline-block; /* 버튼 크기에 맞춰 너비를 줄임 */
+    /* 버튼과 모달이 겹치지 않게 하기 위한 여백 등 추가 가능 */
+}
+
+.open-modal-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.2);*/
+}
+
+/* --- 모달 창 자체의 스타일 --- */
+.custom-modal {
+    position: absolute; /* 부모 (.modal-trigger-container)를 기준으로 배치 */
+    top: calc(100% + 10px); /* 버튼 높이만큼 아래로 + 10px 여백 */
+    right: 0; /* 버튼의 왼쪽 끝과 정렬 */
+
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    z-index: 1000; /* 다른 요소 위에 오도록 충분히 높은 z-index */
+    min-width: 130px; /* 모달의 최소 너비 */
+    padding: 10px;
+    box-sizing: border-box;
+    transform-origin: top left;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+
+}
+
+/*.modal-content h3 {*/
+/*   margin-top: 0;*/
+/*   margin-bottom: 10px;*/
+/*   color: #333;*/
+/*}*/
+
+/*.modal-content p {*/
+/*   margin-bottom: 15px;*/
+/*   color: #555;*/
+/*}*/
+
+.modal-content a{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.modal-content a:last-child {
+    border-bottom: none;
+}

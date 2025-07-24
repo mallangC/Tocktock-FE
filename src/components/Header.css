@@ -4,35 +4,52 @@
     width: 100%;
     font-weight: bold;
     display: flex;
-    justify-content: space-around; /* 또는 gap: 20px; 등 원하는 간격으로 설정 */
+    justify-content: space-around;
     align-items: center;
+    padding: 5px 0;
+    background-color: #F0F0F0;
+    border-radius: 10px;
 
-    padding-top: 10px;
-    border-bottom: 1px solid #ccc; /* 1px 두께의 회색 실선 */
-    padding-bottom: 15px; /* 줄과 링크 사이의 간격 */
-    background-color: white;
+    max-width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin: 0 auto 30px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
     .Header {
         max-width: 700px;
-        margin: 0 auto;
+        margin: 0 auto 30px;
         padding-left: 0;
         padding-right: 0;
         justify-content: space-around;
+        box-sizing: border-box;
     }
 }
 
-.Header a {
+
+.nav-button {
     text-decoration: none;
     color: black;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 5px;
+    flex: 1; /* <--- 이 부분이 중요! 남는 공간을 균등하게 나눠 가집니다. */
+    min-width: 0; /* flex 아이템의 기본 min-width를 오버라이드하여 줄어들 수 있게 함 */
 }
 
-.Header button {
-    font-weight: bold;
-    border: none;
-    background-color: transparent;
+.active-nav-button {
+    text-decoration: none;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
-    color: black;
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: #367AFE;
+    text-align: center;
+    margin: 0 5px;
+    flex: 1; /* <--- 이 부분이 중요! 남는 공간을 균등하게 나눠 가집니다. */
+    min-width: 0; /* flex 아이템의 기본 min-width를 오버라이드하여 줄어들 수 있게 함 */
 }
