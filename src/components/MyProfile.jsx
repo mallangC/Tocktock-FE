@@ -50,7 +50,7 @@ function MyProfile() {
         <div className="button-container">
           <button onClick={handleLogout}>{'로그아웃 >'}
           </button>
-          <button onClick={handleDeleteMember}>회원탈퇴</button>
+          <button onClick={handleDeleteMember}>{'회원탈퇴 >'}</button>
         </div>
       </div>
   );
