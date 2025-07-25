@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 function MyProfile() {
   const [userInfo, setUserInfo] = useState(null);
-  const { logout } = useAuth();
+  const {logout} = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,12 +19,19 @@ function MyProfile() {
   }, []);
 
   const handleLogout = async () => {
-    const success = await logout(); // AuthContext의 logout 함수 호출
+    const success = await logout();
     if (success) {
-      navigate('/login', { replace: true });
+      navigate('/login', {replace: true});
     }
   };
 
+  const handleDeleteMember = async () => {
+    const isConfirmed = window.confirm("정말로 회원 탈퇴를 진행하시겠습니까?");
+    if (isConfirmed) {
+      await apiService.deleteMember();
+      navigate('/login', {replace: true});
+    }
+  };
 
   return (
       <div className="Profile">
@@ -43,7 +50,7 @@ function MyProfile() {
         <div className="button-container">
           <button onClick={handleLogout}>{'로그아웃 >'}
           </button>
-          {/*<button>회원탈퇴</button>*/}
+          <button onClick={handleDeleteMember}>회원탈퇴</button>
         </div>
       </div>
   );

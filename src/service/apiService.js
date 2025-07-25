@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.tock-tock.com";
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -63,6 +63,10 @@ const apiService = {
 
     logout: async () => {
         await api.get(`/logout`);
+    },
+
+    deleteMember: async () => {
+        await api.delete(`/member`);
     }
 };
 

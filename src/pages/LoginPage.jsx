@@ -6,9 +6,7 @@ import TocktockLogo from "../../public/loginLogoAndText.png"
 
 function LoginPage() {
     const handleGoogleLogin = () => {
-        window.location.href = `${import.meta.env.VITE_BASE_URL}/oauth2/authorization/google`;
-        // window.location.href = `${import.meta.env.VITE_BASE_URL}/auth/google`;
-
+        window.location.href = `${import.meta.env.VITE_BASE_URL || "https://api.tock-tock.com"}/oauth2/authorization/google`;
     };
 
     return (
@@ -20,7 +18,7 @@ function LoginPage() {
                 <span className="button-text">Google로 계속하기</span>
             </button>
           <p className="end-text">로그인 오류 및 문의&nbsp;
-          <a href="mailto:info@yourcompany.com">ckj9001@gmail.com</a>
+          <a href="mailto:ckj9001@gmail.com">ckj9001@gmail.com</a>
           </p>
         </div>
     );
