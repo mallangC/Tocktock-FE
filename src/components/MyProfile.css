@@ -1,8 +1,7 @@
-/* --- 1. 메인 Flex 컨테이너: 프로필 사진과 정보 영역을 가로로 정렬 --- */
 .profile-container {
-    display: flex;          /* 자식 요소들을 가로로 배치 (기본값) */
-    align-items: center;    /* <--- 자식 요소들을 세로 중앙에 정렬 (사진과 텍스트가 중앙에 맞춰짐) */
-    gap: 15px;              /* 프로필 사진과 정보 사이의 간격 */
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-left: 10px;
     padding-bottom: 20px;
     border-bottom: 2px solid #E0E0E0;
@@ -11,64 +10,40 @@
     box-sizing: border-box;
 }
 
-/* 프로필 이미지 감싸는 컨테이너 */
-.profile-image {
-    /* img 태그에 직접 width/height를 주므로 flex-shrink는 불필요 */
-    /* 너비나 높이가 정해지지 않은 경우 flex-shrink: 0; 을 사용하여 줄어들지 않게 할 수 있습니다. */
-}
-
-/* 프로필 이미지 자체 */
-.profile-picture { /* userInfo.picture && <img src={userInfo.picture} alt="Profile" className="profile-picture"/> */
-    width: 60px;           /* 사진 너비 */
-    height: 60px;          /* 사진 높이 */
-    object-fit: cover;     /* 이미지 비율 유지하며 채움 */
-    border-radius: 50%;    /* 원형 프로필 사진 */
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
     border: 2px solid #ddd;
 }
 
-/* --- 2. 이름/이메일 Flex 컨테이너: 이름과 이메일을 세로로 정렬 --- */
-/* 오타 주의: profil-info -> profile-info 로 수정 권장 */
-.profile-info { /* <--- 현재 JSX에 맞춰 profil-info로 작성했지만, profile-info로 통일하는 것이 좋습니다. */
-    display: flex;         /* <--- 자식 요소들을 Flex 아이템으로 만듭니다. */
-    flex-direction: column; /* <--- 핵심! 자식 요소들을 세로(컬럼) 방향으로 배치 */
-    justify-content: center; /* 세로 방향으로 중앙 정렬 */
-    /* gap: 5px; */ /* 이름과 이메일 사이의 간격 (flex-direction: column일 때 gap은 세로 간격) */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.profile-info p { /* profil-info 내부의 p 태그 (이름, 이메일) */
-    margin: 0; /* p 태그의 기본 마진 제거 */
-    line-height: 1.2; /* 줄 간격 조절 */
+.profile-info p {
+    margin: 0;
+    line-height: 1.2;
 }
 
-.profile-info p:first-child { /* 이름에 해당하는 첫 번째 p 태그 */
-    font-size: 1.1em;
+.profile-info p:first-child {
+    font-weight: 400;
+    font-size: 18px;
     color: #333;
-    margin-bottom: 3px; /* 이름과 이메일 사이 간격 */
+    margin-bottom: 3px;
 }
 
-.profile-info p:last-child { /* 이메일에 해당하는 두 번째 p 태그 */
-    font-size: 0.9em;
+.profile-info p:last-child {
+    font-size: 14px;
     color: #333;
 
-}
-
-/* 로그아웃 버튼 스타일 (예시) */
-.logout-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.logout-button:hover {
-    background-color: #c82333;
 }
 
 .Profile h2 {
+    font-weight: 600;
     margin-bottom: 10px;
     color: #367AFE;
     margin-left: 10px;

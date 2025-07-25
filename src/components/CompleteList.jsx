@@ -7,7 +7,6 @@ const CompleteList = ({date, todos}) => {
         {todos.map(todo =>
             <CompleteItem key={todo.id} todo={todo}/>)}
       </div>
-
   )
 }
 

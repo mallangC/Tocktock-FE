@@ -1,8 +1,9 @@
 .Header {
+    font-family: Pretendard, sans-serif;
+    font-weight: 600;
     position: sticky;
     top: 0;
     width: 100%;
-    font-weight: bold;
     display: flex;
     justify-content: space-around;
     align-items: center;
